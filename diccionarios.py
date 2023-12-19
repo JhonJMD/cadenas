@@ -1,3 +1,4 @@
+import os
 alumnos = {}
 alumno = {
     "codigo":"123",
@@ -37,6 +38,17 @@ alumno = {
         "trabajos":[],
     }
 }
-alumnos.update(alumno)
+os.system("cls")
+alumnos.update({alumno["codigo"]:alumno})
 print("Mostrando Informacion de Alumnos")
-print(alumnos["123"])
+alumnos.update(alumno)
+print(alumnos.pop("126"))
+print(alumnos)
+os.system("cls")
+estudiante = alumnos.get("123")
+print(estudiante)
+print(estudiante.pop("edad"))
+print(estudiante)
+print(alumnos)
+estudiante.update({"age":23})
+os.system("pause")

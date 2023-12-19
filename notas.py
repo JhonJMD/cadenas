@@ -94,10 +94,7 @@ while (isActive):
                             else:
                                 isAddGrades = False
                     elif (opNotas == 4):
-                        isActiveGrades = False
-
-                    elif (opNotas == 5):
-                        isActiveGrades = False
+                        isActiveGrades = False  
                     else:
                         print("Opcion invalida")                
                 os.system("pause")
@@ -108,10 +105,28 @@ while (isActive):
                     print(item)
             os.system("pause")
         elif (opMenu == 4):
+            defParciales = 1
+            defQuices = 1
+            defTrabajos = 1
+            codigo = input("Ingrese el codigo del Estudiante: ")
+            for item in alumnos:
+                if codigo in item:
+                    indice = alumnos.index(item)
+            defParciales = (sum(alumnos[indice][3])/len(alumnos[indice][3])) * 0.6
+            defQuices = (sum(alumnos[indice][4])/len(alumnos[indice][4])) * 0.25   
+            defTrabajos = (sum(alumnos[indice][5])/len(alumnos[indice][5])) * 0.15 
+            notaFinal = defParciales + defQuices + defTrabajos
+            print(f"Estudiante: {nombre}")
+            print(f"Codigo: {codigo}")
+            print(f"Edad: {edad}")
+            print(f"Notas Parciales: {alumnos[indice][3]} definitiva es: {defParciales}") 
+            print(f"Notas Parciales: {alumnos[indice][4]} definitiva es: {defQuices}") 
+            print(f"Notas Parciales: {alumnos[indice][5]} definitiva es: {defTrabajos}") 
+            print(f"Nota final es: {notaFinal}")
+        elif (opMenu == 5):
             os.system("cls")
             print("Gracias por usar nuestro sistema")
-            isActive = False
+            isActive = False    
         else:
             print("Opcion invalida")
     os.system("pause")
-
